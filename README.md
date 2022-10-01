@@ -44,7 +44,7 @@ console.log(ap.isPalindrome("Race car", {caseSensitive: true, space: true})) // 
 - `text` (string) is the whole string you want to look for the `pattern`
 - `options` (object) is an object to customize the options desribed bellow:
   | Parameter | Type | Deafult | Description |
-  | --------- | :----: | :-------: | ----------- |
+  |:----------|:----:|:-------:|:------------|
   | space | boolean | false | `true` means space counted as a character.<br> `false` means space is not counted as character and will be ignored |
   | caseSensitive | boolean | false | `true` means case sensitive character.<br> `false` means case insensitive |
   | unique | boolean | false | `true` only return unique sequence result.<br> `false` will return all sequence result |
@@ -60,8 +60,9 @@ console.log(ap.isPalindrome("Race car", {caseSensitive: true, space: true})) // 
 - Return type `boolean`. `true` if they are anagram, `false` if it is not anagram
 - `word1` and `word2` is the text/string you you want to check wether if they are anagram or not
 - `options` (object) is an object to customize the options desribed bellow:
+
   | Parameter | Type | Deafult | Description |
-  | --------- | :----: | :-------: | ----------- |
+  |:----------|:----:|:-------:|:------------|
   | space | boolean | false | `true` means space counted as a character.<br> `false` means space is not counted as character and will be ignored |
   | caseSensitive | boolean | false | `true` means case sensitive character.<br> `false` means case insensitive |
 - Example use :
@@ -77,8 +78,9 @@ console.log(ap.isPalindrome("Race car", {caseSensitive: true, space: true})) // 
 - Return type `boolean`. `true` if the word palindrome, `false` if it is not palindrome
 - `word` is the text/string you you want to check if it is palindrome or not
 - `options` (object) is an object to customize the options desribed bellow:
+
   | Parameter | Type | Deafult | Description |
-  | --------- | :----: | :-------: | ----------- |
+  |:----------|:----:|:-------:|:------------|
   | space | boolean | false | `true` means space counted as a character.<br> `false` means space is not counted as character and will be ignored |
   | caseSensitive | boolean | false | `true` means case sensitive character.<br> `false` means case insensitive |
 - Example use :
