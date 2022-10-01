@@ -1,0 +1,34 @@
+{
+  "name": "@fajarbc/anagram-palindrome",
+  "version": "0.1.0",
+  "description": "Check if text contain anagram pattern, check if two words are anagram, check if word is palindrome",
+  "main": "src/index.js",
+  "publishConfig": {
+    "@fajarbc:registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fajarbc/anagram-words.git"
+  },
+  "keywords": [
+    "anagram-palindrome",
+    "anagram-words",
+    "anagram",
+    "palindrome"
+  ],
+  "author": "Fajar BC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fajarbc/anagram-palindrome/issues"
+  },
+  "homepage": "https://github.com/fajarbc/anagram-palindrome#readme",
+  "devDependencies": {
+    "jest": "^29.1.2"
+  },
+  "files": [
+    "src"
+  ]
+}
