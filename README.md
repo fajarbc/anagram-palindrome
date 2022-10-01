@@ -86,7 +86,7 @@ console.log(ap.isPalindrome("Race car", {caseSensitive: true, space: true})) // 
 - Example use :
     ```javascript
     const ap = require("anagram-palindrome")
-    console.log(ap.isPalindrome("Race car")) // output: false
+    console.log(ap.isPalindrome("Race car")) // output: true
     console.log(ap.isPalindrome("Racecar", {caseSensitive: true})) // output: false
     console.log(ap.isPalindrome("race car", {space: true})) // output: false
     ```

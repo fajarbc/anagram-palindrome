@@ -1,6 +1,6 @@
 {
   "name": "anagram-palindrome",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Check if text contain anagram pattern, check if two words are anagram, check if word is palindrome",
   "main": "src/index.js",
   "scripts": {

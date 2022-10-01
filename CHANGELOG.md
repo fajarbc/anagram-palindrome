@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Update github pages theme
+### Changed
+- Update readme
+
 ## 0.1.6 - 2022-10-01
 ### Changed
 - Change registry to npmjs.com
