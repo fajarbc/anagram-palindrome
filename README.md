@@ -34,6 +34,23 @@ console.log(isPalindrome("race car", {space: true})) // output: false
 console.log(isPalindrome("Rac e caR", {caseSensitive: true, space: true})) // output: true
 console.log(isPalindrome("Race car", {caseSensitive: true, space: true})) // output: false
 ```
+Or if you are using this directly in your browser, you could use `type="module"` in your `script` tag. Here, I'm using **unpkg.com** as cdn source to call package `anagram-palindrome` version `0.2.1`.
+
+```html
+<script type="module">
+    import { findPattern } from 'https://unpkg.com/anagram-palindrome@0.2.1/src/index.js';
+
+  console.log(findPattern("car", "race car care")) // output: [ 'rac', 'car', 'arc', 'rca', 'car' ]
+</script>
+```
+or import all function
+```html
+<script type="module">
+  import * as ap from 'https://unpkg.com/anagram-palindrome@0.2.1/src/index.js';
+
+  console.log(ap.findPattern("car", "race car care")) // output: [ 'rac', 'car', 'arc', 'rca', 'car' ]
+</script>
+```
 
 ## Function
 ### findPattern
