@@ -5,7 +5,7 @@
  * @param {string} replace - The string going to replace the pattern string
  * @returns new replaced string
  */
-export const replaceAll = (string, find, replace) => {
+export function replaceAll(string, find, replace) {
   return string.replace(new RegExp(find, "g"), replace);
 };
 
@@ -15,13 +15,13 @@ export const replaceAll = (string, find, replace) => {
  * @param {Object} b - Object key and value to look into
  * @returns {boolean} true if a is part of b
  */
-export const compare = (a, b) => {
+export function compare(a, b) {
   for (const key of Object.keys(a)) if (a[key] != b[key]) return false;
 
   return true;
 };
 
-export const createHash = (pattern, text) => {
+export function createHash(pattern, text) {
   let p = pattern.split("");
   let t = text.split("");
   let pw = {};
@@ -46,7 +46,7 @@ export const createHash = (pattern, text) => {
  * @returns {Array} [pattern, text]
  */
 
-export const applyOptions = (text, caseSensitive = false, space = false) => {
+export function applyOptions(text, caseSensitive = false, space = false) {
   if (typeof text === "string") {
     if (!space) text = replaceAll(text, " ", ""); // remove space
     if (!caseSensitive) text = text.toLowerCase(); // transform to lower case

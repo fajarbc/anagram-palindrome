@@ -59,6 +59,8 @@ with
 `https://cdn.jsdelivr.net/npm/anagram-palindrome@0.2.2/src/index.js`
 
 ## Function
+Read complete [API documentation here](out/index.html)
+
 ### findPattern
 ```findPattern(pattern, text, options)```
 - Description: return anagram words/sequences from the given string (text) if any
