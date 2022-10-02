@@ -116,3 +116,5 @@ Read complete [API documentation here](https://fajarbc.github.com/anagram-palind
     console.log(isPalindrome("Racecar", {caseSensitive: true})) // output: false
     console.log(isPalindrome("race car", {space: true})) // output: false
     ```
+# Changelog
+Read full [Changlog here](https://fajarbc.github.com/anagram-palindrome/CHANGELOG.html)
