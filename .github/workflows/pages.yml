@@ -37,7 +37,7 @@ jobs:
         uses: andstor/jsdoc-action@v1
         with:
           source_dir: ./src
-          output_dir: ./_site/out
+          output_dir: ./out
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
