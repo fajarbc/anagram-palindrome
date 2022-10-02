@@ -1,6 +1,6 @@
 #Jekyll configuration
 name: Anagram Palindrome - Fajar BC GitHub
-description: Check if text contain anagram pattern, check if two words are anagram, check if word is palindrome
+description: Check if text contain anagram pattern, check if two words are anagram, check if word is palindrome.<br>Read full <a href="https://fajarbc.github.io/anagram-palindrome/CHANGELOG.html">Changlog here</a>.<br>Read full <a href="https://fajarbc.github.io/anagram-palindrome/out/index.html">API Documentation here</a>.
 markdown: GFM
 show_downloads: false
 remote_theme: pages-themes/minimal@v0.2.0
