@@ -1,4 +1,9 @@
-import { applyOptions, compare, createHash, replaceAll } from "../src/utilities.js";
+import {
+  applyOptions,
+  compare,
+  createHash,
+  removeSpaces,
+} from "../src/utilities.js";
 
 describe("applyOptions function test", () => {
   it("Default option (string text)", () => {
@@ -8,55 +13,47 @@ describe("applyOptions function test", () => {
   });
   it("Option (string text): caseSensitive is true", () => {
     const caseSensitive = true;
-    const received = applyOptions("Race car care", caseSensitive);
-    const expected = "Racecarcare";
+    const received = applyOptions("Race car", caseSensitive);
+    const expected = "Racecar";
     expect(received).toEqual(expected);
   });
   it("Option (string text): space is true", () => {
     const caseSensitive = false;
     const space = true;
-    const received = applyOptions("race car care", caseSensitive, space);
-    const expected = "race car care";
+    const received = applyOptions("Race car", caseSensitive, space);
+    const expected = "race car";
     expect(received).toEqual(expected);
   });
   it("Option (string text): caseSensitive is true, space is true", () => {
     const caseSensitive = true;
     const space = true;
-    const received = applyOptions("Race car care", caseSensitive, space);
-    const expected = "Race car care";
+    const received = applyOptions("Race car", caseSensitive, space);
+    const expected = "Race car";
     expect(received).toEqual(expected);
   });
   it("Default option (array text)", () => {
-    const received = applyOptions(["Car", "race car care"]);
-    const expected = ["car", "racecarcare"];
+    const received = applyOptions(["Car", "race car"]);
+    const expected = ["car", "racecar"];
     expect(received).toEqual(expected);
   });
   it("Option (array text): caseSensitive is true", () => {
     const caseSensitive = true;
-    const received = applyOptions(["cAr", "race car care"], caseSensitive);
-    const expected = ["cAr", "racecarcare"];
+    const received = applyOptions(["cAr", "race car"], caseSensitive);
+    const expected = ["cAr", "racecar"];
     expect(received).toEqual(expected);
   });
   it("Option (array text): space is true", () => {
     const caseSensitive = false;
     const space = true;
-    const received = applyOptions(
-      ["cAr", "race car care"],
-      caseSensitive,
-      space
-    );
-    const expected = ["car", "race car care"];
+    const received = applyOptions(["cAr", "race car"], caseSensitive, space);
+    const expected = ["car", "race car"];
     expect(received).toEqual(expected);
   });
   it("Option (array text): caseSensitive is true, space is true", () => {
     const caseSensitive = true;
     const space = true;
-    const received = applyOptions(
-      ["cAr", "race car care"],
-      caseSensitive,
-      space
-    );
-    const expected = ["cAr", "race car care"];
+    const received = applyOptions(["cAr", "race car"], caseSensitive, space);
+    const expected = ["cAr", "race car"];
     expect(received).toEqual(expected);
   });
 });
@@ -80,6 +77,13 @@ describe("compare function test", () => {
     const b = { a: 1, b: 1 };
     const received = compare(a, b);
     const expected = true;
+    expect(received).toEqual(expected);
+  });
+  it("Same hashmap #3: same key different value", () => {
+    const a = { a: 1 };
+    const b = { a: 2 };
+    const received = compare(a, b);
+    const expected = false;
     expect(received).toEqual(expected);
   });
   it("Difference hashmap #1: completely different", () => {
@@ -108,14 +112,14 @@ describe("createHash function test", () => {
     expect(tw).toEqual(expected);
   });
 });
-describe("replaceAll function test", () => {
+describe("removeSpaces function test", () => {
   it("single match", () => {
-    const received = replaceAll("race carcare", " ", "");
+    const received = removeSpaces("race carcare");
     const expected = "racecarcare";
     expect(received).toEqual(expected);
   });
   it("multiple match", () => {
-    const received = replaceAll("race car care", " ", "");
+    const received = removeSpaces("race car care");
     const expected = "racecarcare";
     expect(received).toEqual(expected);
   });
