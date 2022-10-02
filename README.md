@@ -11,28 +11,45 @@ npm i anagram-palindrome
 
 ## Usage
 ```javascript
-const ap = require("anagram-palindrome")
+import { findPattern, areAnagram, isPalindrome } from "anagram-palindrome"
 
 // findPattern
-console.log(ap.findPattern("car", "race car care")) // output: [ 'rac', 'car', 'arc', 'rca', 'car' ]
-console.log(ap.findPattern("car", "race car care", {unique: true})) // output: [ 'rac', 'car', 'arc', 'rca' ]
-console.log(ap.findPattern("car", "race car care", {space: true})) // output: [ 'rac', 'car', 'car' ]
-console.log(ap.findPattern("car", "race car care", {space: true, unique: true})) // output: [ 'rac', 'car' ]
-console.log(ap.findPattern("cAr", "race car cAre", {caseSensitive: true})) // output: [ 'rcA', 'cAr' ]
+console.log(findPattern("car", "race car care")) // output: [ 'rac', 'car', 'arc', 'rca', 'car' ]
+console.log(findPattern("car", "race car care", {unique: true})) // output: [ 'rac', 'car', 'arc', 'rca' ]
+console.log(findPattern("car", "race car care", {space: true})) // output: [ 'rac', 'car', 'car' ]
+console.log(findPattern("car", "race car care", {space: true, unique: true})) // output: [ 'rac', 'car' ]
+console.log(findPattern("cAr", "race car cAre", {caseSensitive: true})) // output: [ 'rcA', 'cAr' ]
 
 // areAnagram
-console.log(ap.areAnagram("mything", "My night")) // output: true
-console.log(ap.areAnagram("mything", "My night", {space: true})) // output: false
-console.log(ap.areAnagram("Thing", "Night", {caseSensitive: true})) // output: false
-console.log(ap.areAnagram("My thing", "My night", {caseSensitive: true, space: true})) // output: true
-console.log(ap.areAnagram("Mything", "My Night", {caseSensitive: true, space: true})) // output: false
+console.log(areAnagram("mything", "My night")) // output: true
+console.log(areAnagram("mything", "My night", {space: true})) // output: false
+console.log(areAnagram("Thing", "Night", {caseSensitive: true})) // output: false
+console.log(areAnagram("My thing", "My night", {caseSensitive: true, space: true})) // output: true
+console.log(areAnagram("Mything", "My Night", {caseSensitive: true, space: true})) // output: false
 
 // isPalindrome
-console.log(ap.isPalindrome("Race car")) // output: true
-console.log(ap.isPalindrome("Racecar", {caseSensitive: true})) // output: false
-console.log(ap.isPalindrome("race car", {space: true})) // output: false
-console.log(ap.isPalindrome("Rac e caR", {caseSensitive: true, space: true})) // output: true
-console.log(ap.isPalindrome("Race car", {caseSensitive: true, space: true})) // output: false
+console.log(isPalindrome("Race car")) // output: true
+console.log(isPalindrome("Racecar", {caseSensitive: true})) // output: false
+console.log(isPalindrome("race car", {space: true})) // output: false
+console.log(isPalindrome("Rac e caR", {caseSensitive: true, space: true})) // output: true
+console.log(isPalindrome("Race car", {caseSensitive: true, space: true})) // output: false
+```
+Or if you are using this directly in your browser, you could use `type="module"` in your `script` tag. Here, I'm using **unpkg.com** as cdn source to call package `anagram-palindrome` version `0.2.1`.
+
+```html
+<script type="module">
+    import { findPattern } from 'https://unpkg.com/anagram-palindrome@0.2.1/src/index.js';
+
+  console.log(findPattern("car", "race car care")) // output: [ 'rac', 'car', 'arc', 'rca', 'car' ]
+</script>
+```
+or import all function
+```html
+<script type="module">
+  import * as ap from 'https://unpkg.com/anagram-palindrome@0.2.1/src/index.js';
+
+  console.log(ap.findPattern("car", "race car care")) // output: [ 'rac', 'car', 'arc', 'rca', 'car' ]
+</script>
 ```
 
 ## Function
@@ -50,8 +67,9 @@ console.log(ap.isPalindrome("Race car", {caseSensitive: true, space: true})) // 
   | unique | boolean | false | `true` only return unique sequence result.<br> `false` will return all sequence result |
 - Example use :
     ```javascript
-    const ap = require("anagram-palindrome")
-    console.log(ap.findPattern("car", "race car care", {space: true, unique: true})) // output: [ 'rac', 'car' ]
+    import { findPattern } from "anagram-palindrome"
+
+    console.log(findPattern("car", "race car care", {space: true, unique: true})) // output: [ 'rac', 'car' ]
     ```
 
 ### areAnagram
@@ -67,9 +85,9 @@ console.log(ap.isPalindrome("Race car", {caseSensitive: true, space: true})) // 
   | caseSensitive | boolean | false | `true` means case sensitive character.<br> `false` means case insensitive |
 - Example use :
     ```javascript
-    const ap = require("anagram-palindrome")
-    console.log(ap.areAnagram("Thing", "Night", {caseSensitive: true})) // output: false
-    console.log(ap.areAnagram("Thing", "Night")) // output: true
+    import { areAnagram } from "anagram-palindrome"
+    console.log(areAnagram("Thing", "Night", {caseSensitive: true})) // output: false
+    console.log(areAnagram("Thing", "Night")) // output: true
     ```
 
 ### isPalindrome
@@ -85,8 +103,8 @@ console.log(ap.isPalindrome("Race car", {caseSensitive: true, space: true})) // 
   | caseSensitive | boolean | false | `true` means case sensitive character.<br> `false` means case insensitive |
 - Example use :
     ```javascript
-    const ap = require("anagram-palindrome")
-    console.log(ap.isPalindrome("Race car")) // output: true
-    console.log(ap.isPalindrome("Racecar", {caseSensitive: true})) // output: false
-    console.log(ap.isPalindrome("race car", {space: true})) // output: false
+    import { isPalindrome } from "anagram-palindrome"
+    console.log(isPalindrome("Race car")) // output: true
+    console.log(isPalindrome("Racecar", {caseSensitive: true})) // output: false
+    console.log(isPalindrome("race car", {space: true})) // output: false
     ```

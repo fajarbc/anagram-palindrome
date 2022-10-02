@@ -1,10 +1,10 @@
 {
   "name": "anagram-palindrome",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "Check if text contain anagram pattern, check if two words are anagram, check if word is palindrome",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,10 @@
   },
   "homepage": "https://github.com/fajarbc/anagram-palindrome#readme",
   "devDependencies": {
-    "jest": "^29.1.2"
+    "jasmine": "^4.4.0"
   },
   "files": [
     "src"
-  ]
+  ],
+  "type": "module"
 }
