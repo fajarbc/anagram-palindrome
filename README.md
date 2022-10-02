@@ -1,4 +1,6 @@
-# anagram-palindrome
+# [anagram-palindrome](https://fajarbc.github.io/anagram-palindrome)
+
+[![npm version](https://badge.fury.io/js/anagram-palindrome.svg)](https://badge.fury.io/js/anagram-palindrome)
 
 Find anagram words if existed from the given pattern. Check if two strings are anagram. Check if the given word is palindrome.
 
@@ -14,25 +16,25 @@ npm i anagram-palindrome
 import { findPattern, areAnagram, isPalindrome } from "anagram-palindrome"
 
 // findPattern
-console.log(findPattern("car", "race car care")) // output: [ 'rac', 'car', 'arc', 'rca', 'car' ]
-console.log(findPattern("car", "race car care", {unique: true})) // output: [ 'rac', 'car', 'arc', 'rca' ]
-console.log(findPattern("car", "race car care", {space: true})) // output: [ 'rac', 'car', 'car' ]
-console.log(findPattern("car", "race car care", {space: true, unique: true})) // output: [ 'rac', 'car' ]
-console.log(findPattern("cAr", "race car cAre", {caseSensitive: true})) // output: [ 'rcA', 'cAr' ]
+console.log(findPattern("car", "race car care")) // [ 'rac', 'car', 'arc', 'rca', 'car' ]
+console.log(findPattern("car", "race car care", {unique: true})) // [ 'rac', 'car', 'arc', 'rca' ]
+console.log(findPattern("car", "race car care", {space: true})) // [ 'rac', 'car', 'car' ]
+console.log(findPattern("car", "race car care", {space: true, unique: true})) // [ 'rac', 'car' ]
+console.log(findPattern("cAr", "race car cAre", {caseSensitive: true})) // [ 'rcA', 'cAr' ]
 
 // areAnagram
-console.log(areAnagram("mything", "My night")) // output: true
-console.log(areAnagram("mything", "My night", {space: true})) // output: false
-console.log(areAnagram("Thing", "Night", {caseSensitive: true})) // output: false
-console.log(areAnagram("My thing", "My night", {caseSensitive: true, space: true})) // output: true
-console.log(areAnagram("Mything", "My Night", {caseSensitive: true, space: true})) // output: false
+console.log(areAnagram("mything", "My night")) // true
+console.log(areAnagram("mything", "My night", {space: true})) // false
+console.log(areAnagram("Thing", "Night", {caseSensitive: true})) // false
+console.log(areAnagram("My thing", "My night", {caseSensitive: true, space: true})) // true
+console.log(areAnagram("Mything", "My Night", {caseSensitive: true, space: true})) // false
 
 // isPalindrome
-console.log(isPalindrome("Race car")) // output: true
-console.log(isPalindrome("Racecar", {caseSensitive: true})) // output: false
-console.log(isPalindrome("race car", {space: true})) // output: false
-console.log(isPalindrome("Rac e caR", {caseSensitive: true, space: true})) // output: true
-console.log(isPalindrome("Race car", {caseSensitive: true, space: true})) // output: false
+console.log(isPalindrome("Race car")) // true
+console.log(isPalindrome("Racecar", {caseSensitive: true})) // false
+console.log(isPalindrome("race car", {space: true})) // false
+console.log(isPalindrome("Rac e caR", {caseSensitive: true, space: true})) // true
+console.log(isPalindrome("Race car", {caseSensitive: true, space: true})) // false
 ```
 Or if you are using this directly in your browser, you could use `type="module"` in your `script` tag. Here, I'm using **unpkg.com** as cdn source to call package `anagram-palindrome` version `0.2.3`.
 
@@ -40,7 +42,7 @@ Or if you are using this directly in your browser, you could use `type="module"`
 <script type="module">
   import { findPattern } from 'https://unpkg.com/anagram-palindrome@0.2.3';
 
-  console.log(findPattern("car", "race car care")) // output: [ 'rac', 'car', 'arc', 'rca', 'car' ]
+  console.log(findPattern("car", "race car care")) // [ 'rac', 'car', 'arc', 'rca', 'car' ]
 </script>
 ```
 or import all function
@@ -48,7 +50,7 @@ or import all function
 <script type="module">
   import * as ap from 'https://unpkg.com/anagram-palindrome@0.2.3';
 
-  console.log(ap.findPattern("car", "race car care")) // output: [ 'rac', 'car', 'arc', 'rca', 'car' ]
+  console.log(ap.findPattern("car", "race car care")) // [ 'rac', 'car', 'arc', 'rca', 'car' ]
 </script>
 ```
 You can change cdn from **unpkg.com** to **jsdelivr.net** by replacing 
@@ -77,7 +79,7 @@ Read complete [API documentation here](https://fajarbc.github.io/anagram-palindr
     ```javascript
     import { findPattern } from "anagram-palindrome"
 
-    console.log(findPattern("car", "race car care", {space: true, unique: true})) // output: [ 'rac', 'car' ]
+    console.log(findPattern("car", "race car care", {space: true, unique: true})) // [ 'rac', 'car' ]
     ```
 
 ### areAnagram
@@ -94,8 +96,8 @@ Read complete [API documentation here](https://fajarbc.github.io/anagram-palindr
 - Example use :
     ```javascript
     import { areAnagram } from "anagram-palindrome"
-    console.log(areAnagram("Thing", "Night", {caseSensitive: true})) // output: false
-    console.log(areAnagram("Thing", "Night")) // output: true
+    console.log(areAnagram("Thing", "Night", {caseSensitive: true})) // false
+    console.log(areAnagram("Thing", "Night")) // true
     ```
 
 ### isPalindrome
@@ -112,9 +114,9 @@ Read complete [API documentation here](https://fajarbc.github.io/anagram-palindr
 - Example use :
     ```javascript
     import { isPalindrome } from "anagram-palindrome"
-    console.log(isPalindrome("Race car")) // output: true
-    console.log(isPalindrome("Racecar", {caseSensitive: true})) // output: false
-    console.log(isPalindrome("race car", {space: true})) // output: false
+    console.log(isPalindrome("Race car")) // true
+    console.log(isPalindrome("Racecar", {caseSensitive: true})) // false
+    console.log(isPalindrome("race car", {space: true})) // false
     ```
 # Changelog
 Read full [Changlog here](https://fajarbc.github.io/anagram-palindrome/CHANGELOG.html)
