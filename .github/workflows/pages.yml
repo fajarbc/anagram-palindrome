@@ -31,6 +31,9 @@ jobs:
         with:
           source_dir: ./src
           output_dir: ./out
+          front_page: ./README.md
+          template: better-docs
+          recurse: true
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Build with Jekyll
