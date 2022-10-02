@@ -27,41 +27,33 @@ describe("applyOptions function test", () => {
   it("Option (string text): caseSensitive is true, space is true", () => {
     const caseSensitive = true;
     const space = true;
-    const received = applyOptions("Race car care", caseSensitive, space);
-    const expected = "Race car care";
+    const received = applyOptions("Race car", caseSensitive, space);
+    const expected = "Race car";
     expect(received).toEqual(expected);
   });
   it("Default option (array text)", () => {
-    const received = applyOptions(["Car", "race car care"]);
-    const expected = ["car", "racecarcare"];
+    const received = applyOptions(["Car", "race car"]);
+    const expected = ["car", "racecar"];
     expect(received).toEqual(expected);
   });
   it("Option (array text): caseSensitive is true", () => {
     const caseSensitive = true;
-    const received = applyOptions(["cAr", "race car care"], caseSensitive);
-    const expected = ["cAr", "racecarcare"];
+    const received = applyOptions(["cAr", "race car"], caseSensitive);
+    const expected = ["cAr", "racecar"];
     expect(received).toEqual(expected);
   });
   it("Option (array text): space is true", () => {
     const caseSensitive = false;
     const space = true;
-    const received = applyOptions(
-      ["cAr", "race car care"],
-      caseSensitive,
-      space
-    );
-    const expected = ["car", "race car care"];
+    const received = applyOptions(["cAr", "race car"], caseSensitive, space);
+    const expected = ["car", "race car"];
     expect(received).toEqual(expected);
   });
   it("Option (array text): caseSensitive is true, space is true", () => {
     const caseSensitive = true;
     const space = true;
-    const received = applyOptions(
-      ["cAr", "race car care"],
-      caseSensitive,
-      space
-    );
-    const expected = ["cAr", "race car care"];
+    const received = applyOptions(["cAr", "race car"], caseSensitive, space);
+    const expected = ["cAr", "race car"];
     expect(received).toEqual(expected);
   });
 });

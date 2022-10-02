@@ -65,10 +65,11 @@ export function createHash(pattern, text) {
  * @param {string|Array} text - The text you want to apply options on
  * @param {boolean} [caseSensitive=false] - true = case sensitive. false = case insensitive. Default is false
  * @param {boolean} [space=false] - true = space is count. false = space is not count as character. Default is false
- * @returns {Array} [pattern, text]
+ * @returns {string|Array} text with options applied
  *
  * @example <caption>Object compares</caption>
  * applyOptions("Race car") // 'racecar'
+ * applyOptions(["Car", "Race car"]) // [ 'car', 'racecar' ]
  * applyOptions("Race car", {caseSensitive: true}) // 'Racecar'
  * applyOptions("Race car", {space: true}) // 'race car'
  */
