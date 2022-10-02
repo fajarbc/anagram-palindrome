@@ -38,7 +38,6 @@ jobs:
         with:
           source_dir: ./src
           output_dir: ./_site/out
-          template: minami
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 

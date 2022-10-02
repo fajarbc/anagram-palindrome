@@ -59,7 +59,7 @@ with
 `https://cdn.jsdelivr.net/npm/anagram-palindrome@0.2.2/src/index.js`
 
 ## Function
-Read complete [API documentation here](out/index.html)
+Read complete [API documentation here](https://fajarbc.github.com/anagram-palindrome/out/index.html)
 
 ### findPattern
 ```findPattern(pattern, text, options)```
