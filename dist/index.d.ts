@@ -1,4 +1,8 @@
-import { compare, createHash, applyOptions } from "./utilities.js";
+declare type Options = {
+    caseSensitive?: boolean;
+    space?: boolean;
+    unique?: boolean;
+};
 
 /**
  * Return anagram words/sequences from the given string if any
@@ -17,37 +21,7 @@ import { compare, createHash, applyOptions } from "./utilities.js";
  * @example <caption>Find anagram pattern with options</caption>
  * findPattern("car", "race car care", {space: true, unique: true}) // [ 'rac', 'car' ]
  */
-export function findPattern(
-  pattern,
-  text,
-  { caseSensitive = false, space = false, unique = false } = {}
-) {
-  const words = [];
-  let word;
-
-  // apply options
-  [pattern, text] = applyOptions([pattern, text], caseSensitive, space);
-
-  let p = pattern.split("");
-  let t = text.split("");
-  const pl = p.length;
-
-  // create pattern window & first text window
-  let { pw, tw } = createHash(pattern, text);
-
-  // iterate next text & compare to pattern window
-  let i = pl;
-  for (; i <= t.length; ++i) {
-    word = text.substring(i - pl, i);
-    if (compare(pw, tw) && (!unique || (unique && !words.includes(word))))
-      words.push(word);
-    tw[t[i]] = tw[t[i]] ? ++tw[t[i]] : 1;
-    tw[t[i - pl]] = tw[t[i - pl]] ? --tw[t[i - pl]] : 1;
-  }
-
-  return words;
-}
-
+declare function findPattern(pattern: string, text: string, { caseSensitive, space, unique }?: Options): string[];
 /**
  * Check if word is palindrome
  *
@@ -63,19 +37,7 @@ export function findPattern(
  * @example <caption>Check if word is palindrome with options</caption>
  * isPalindrome("Racecar", {caseSensitive: true}) // false
  */
-export function isPalindrome(
-  word,
-  { caseSensitive = false, space = false } = {}
-) {
-  word = applyOptions(word, caseSensitive, space);
-  const len = word.length;
-
-  for (let i = 0; i < Math.floor(len / 2); i++)
-    if (word[i] != word[len - i - 1]) return false;
-
-  return true;
-}
-
+declare function isPalindrome(word: string | string[], { caseSensitive, space }?: Options): boolean;
 /**
  * Check if word given are anagram
  *
@@ -92,19 +54,6 @@ export function isPalindrome(
  * @example <caption>Check if two words are anagram with options</caption>
  * areAnagram("Thing", "Night", {caseSensitive: true}) // false
  */
-export function areAnagram(
-  word1,
-  word2,
-  { caseSensitive = false, space = false } = {}
-) {
-  // word1 as pattern, word2 as text
-  if (word1 == word2) return true;
+declare function areAnagram(word1: string, word2: string, { caseSensitive, space }?: Options): boolean;
 
-  // apply options
-  [word1, word2] = applyOptions([word1, word2], caseSensitive, space);
-
-  if (word1.length != word2.length) return false;
-  // create hash and compare <-- wrong. should strict to the order also
-  let { pw, tw } = createHash(word1, word2);
-  return compare(pw, tw);
-}
+export { areAnagram, findPattern, isPalindrome };

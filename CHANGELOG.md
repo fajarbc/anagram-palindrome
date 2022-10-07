@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.3.0 - 2022-10-07
+### Added
+- Add support for both `CJS` and `ESM`
+
+### Changed
+- Development using `Typescript` and build with `unjs/unbuild`
+- Replace unit testing `Jasmine` to `Mocha/Chai`
+
 ## 0.2.3 - 2022-10-02
 ### Added
 - More unit testing case

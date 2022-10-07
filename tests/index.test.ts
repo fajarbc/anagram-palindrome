@@ -1,27 +1,28 @@
-import { isPalindrome, areAnagram, findPattern } from "../src/index.js";
+import { isPalindrome, areAnagram, findPattern } from "../src/index";
+import { expect } from 'chai';
 
 describe("findPattern function test", () => {
   it("Default option", () => {
     const received = findPattern("car", "race car care");
     const expected = ["rac", "car", "arc", "rca", "car"];
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true", () => {
     const received = findPattern("cAr", "race car cAre", {
       caseSensitive: true,
     });
     const expected = ["rcA", "cAr"];
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: space is true", () => {
     const received = findPattern("car", "race car care", { space: true });
     const expected = ["rac", "car", "car"];
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: unique is true", () => {
     const received = findPattern("car", "race car care", { unique: true });
     const expected = ["rac", "car", "arc", "rca"];
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true, space is true", () => {
     const received = findPattern("cAr", "race car cAre", {
@@ -29,7 +30,7 @@ describe("findPattern function test", () => {
       space: true,
     });
     const expected = ["cAr"];
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true, unique is true", () => {
     const received = findPattern("cAr", "rAce car cAre", {
@@ -37,7 +38,7 @@ describe("findPattern function test", () => {
       unique: true,
     });
     const expected = ["rAc", "rcA", "cAr"];
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: space is true, unique is true", () => {
     const received = findPattern("car", "race car care", {
@@ -45,7 +46,7 @@ describe("findPattern function test", () => {
       unique: true,
     });
     const expected = ["rac", "car"];
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true, space is true, unique is true", () => {
     const received = findPattern("Car", "raCe caR care caR", {
@@ -54,34 +55,34 @@ describe("findPattern function test", () => {
       unique: true,
     });
     const expected = ["raC"];
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
 });
 describe("isPalindrome function test", () => {
   it("Deafult option #1 : odd", () => {
     const received = isPalindrome("Race car");
     const expected = true;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Deafult option #2 : even", () => {
     const received = isPalindrome("Race Ecar");
     const expected = true;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Deafult option #2 : false", () => {
-    const received = isPalindrome("mything", "My night");
+    const received = isPalindrome("mything");
     const expected = false;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true", () => {
     const received = isPalindrome("Racecar", { caseSensitive: true });
     const expected = false;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: space is true", () => {
     const received = isPalindrome("race car", { space: true });
     const expected = false;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true, space is true #1 : true", () => {
     const received = isPalindrome("Rac e caR", {
@@ -89,7 +90,7 @@ describe("isPalindrome function test", () => {
       space: true,
     });
     const expected = true;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true, space is true #2 : false", () => {
     const received = isPalindrome("Race car", {
@@ -97,24 +98,24 @@ describe("isPalindrome function test", () => {
       space: true,
     });
     const expected = false;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
 });
 describe("areAnagram function test", () => {
   it("Deafult option", () => {
     const received = areAnagram("mything", "My night");
     const expected = true;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true", () => {
     const received = areAnagram("Thing", "Night", { caseSensitive: true });
     const expected = false;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: space is true", () => {
     const received = areAnagram("mything", "My night", { space: true });
     const expected = false;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true, space is true #1 : true", () => {
     const received = areAnagram("My thing", "My night", {
@@ -122,7 +123,7 @@ describe("areAnagram function test", () => {
       space: true,
     });
     const expected = true;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true, space is true #2 : false", () => {
     const received = areAnagram("Mything", "My Night", {
@@ -130,7 +131,7 @@ describe("areAnagram function test", () => {
       space: true,
     });
     const expected = false;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
   it("Option: caseSensitive is true, space is true #3", () => {
     const received = areAnagram("my thing", "My night", {
@@ -138,6 +139,6 @@ describe("areAnagram function test", () => {
       space: true,
     });
     const expected = false;
-    expect(received).toEqual(expected);
+    expect(received).to.deep.equal(expected);
   });
 });
