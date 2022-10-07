@@ -6,12 +6,15 @@ Find anagram words if existed from the given pattern. Check if two strings are a
 
 It has npm package here called [anagram-palindrome](https://www.npmjs.com/package/anagram-palindrome)
 
+**Support CJS and ESM**
+
 ## Install
 ```sh
 npm i anagram-palindrome
 ```
 
 ## Usage
+### ESM Style
 ```javascript
 import { findPattern, areAnagram, isPalindrome } from "anagram-palindrome"
 
@@ -36,11 +39,21 @@ console.log(isPalindrome("race car", {space: true})) // false
 console.log(isPalindrome("Rac e caR", {caseSensitive: true, space: true})) // true
 console.log(isPalindrome("Race car", {caseSensitive: true, space: true})) // false
 ```
-Or if you are using this directly in your browser, you could use `type="module"` in your `script` tag. Here, I'm using **unpkg.com** as cdn source to call package `anagram-palindrome` version `0.2.3`.
+
+### CJS Style
+```javascript
+const { findPattern, areAnagram, isPalindrome } = require("anagram-palindrome")
+
+// findPattern
+console.log(findPattern("car", "race car care")) // [ 'rac', 'car', 'arc', 'rca', 'car' ]
+```
+
+### In Browser
+If you are using this directly in your browser, you could use `type="module"` in your `script` tag. Here, I'm using **unpkg.com** as cdn source to call package `anagram-palindrome` version `0.3.1`.
 
 ```html
 <script type="module">
-  import { findPattern } from 'https://unpkg.com/anagram-palindrome@0.2.3';
+  import { findPattern } from 'https://unpkg.com/anagram-palindrome@0.3.1';
 
   console.log(findPattern("car", "race car care")) // [ 'rac', 'car', 'arc', 'rca', 'car' ]
 </script>
@@ -48,17 +61,17 @@ Or if you are using this directly in your browser, you could use `type="module"`
 or import all function
 ```html
 <script type="module">
-  import * as ap from 'https://unpkg.com/anagram-palindrome@0.2.3';
+  import * as ap from 'https://unpkg.com/anagram-palindrome@0.3.1';
 
   console.log(ap.findPattern("car", "race car care")) // [ 'rac', 'car', 'arc', 'rca', 'car' ]
 </script>
 ```
 You can change cdn from **unpkg.com** to **jsdelivr.net** by replacing 
-`https://unpkg.com/anagram-palindrome@0.2.3`
+`https://unpkg.com/anagram-palindrome@0.3.1`
 
 with
 
-`https://cdn.jsdelivr.net/npm/anagram-palindrome@0.2.3/src/index.js`
+`https://cdn.jsdelivr.net/npm/anagram-palindrome@0.3.1/src/index.js`
 
 ## Function
 Read complete [API documentation here](https://fajarbc.github.io/anagram-palindrome/api-docs/index.html)
