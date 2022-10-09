@@ -1,6 +1,6 @@
 {
   "name": "anagram-palindrome",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Check if text contain anagram pattern, check if two words are anagram, check if word is palindrome",
   "type": "module",
   "exports": {
