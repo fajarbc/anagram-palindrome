@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- JSDoc and better-docs as dev dependecies
+- Add NOTES.md contains development notes
+### Changed
+- Update readme
+- Change `pages.yml` on generating documentation (replace actions with `npm run doc`)
 
 ## 0.3.1 - 2022-10-07
 ### Changed
