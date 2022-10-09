@@ -20,7 +20,7 @@
     "sourceType": "module",
     "opts": {
         "destination": "docs/",
-        "readme": "readme.md",
+        "readme": "README.md",
         "template": "node_modules/better-docs"
     }
 }
