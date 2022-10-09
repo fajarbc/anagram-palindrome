@@ -1,10 +1,32 @@
+/**
+ * Options
+ * @alias Options
+ */
 export type Options = {
+  /**
+   * if true, text is case sensitive
+   */
   caseSensitive?: boolean,
+  /**
+   * if true, spaces in text are counted as a character 
+   */
   space?: boolean,
+  /**
+   * if true, returned array result will be unique
+   */
   unique?: boolean,
 }
 
-export type Hash = { [key: string]: number }
+/**
+ * Hash
+ * @alias Hash
+ */
+export type Hash = {
+  /**
+   * key is a character, the value is the count of the character 
+   */
+  [key: string]: number
+}
 
 /**
  * Return new text without spaces
@@ -12,6 +34,7 @@ export type Hash = { [key: string]: number }
  * @param {string} text - The text where spaces will be removed
  * @returns {string} new text without spaces
  *
+ * @category Utilities
  * @example <caption>Remove all spaces</caption>
  * removeSpaces("race car") // 'racecar'
  */
@@ -26,6 +49,7 @@ export function removeSpaces(text: string): string {
  * @param {Object} b - Object key and value to look into
  * @returns {boolean} true if a is part of b
  *
+ * @category Utilities
  * @example <caption>Object compares</caption>
  * compare({a: 1}, {a: 1}) // true
  * compare({a: 1}, {a: 2}) // false
@@ -44,8 +68,9 @@ export function compare(a: Hash, b: Hash): boolean {
  *
  * @param {string} pattern - Pattern string
  * @param {string} text - Text string
- * @returns {Object} - Object {pw, tw} hashmap of character as key and character count as value
+ * @returns {Object} Object {pw, tw} hashmap of character as key and character count as value
  *
+ * @category Utilities
  * @example <caption>Object compares</caption>
  * createHash("car", "race car") // { pw: { c: 1, a: 1, r: 1 }, tw: { r: 1, a: 1, c: 1 } }
  * createHash("car", "eve") // { pw: { c: 1, a: 1, r: 1 }, tw: { e: 2, v: 1 } }
@@ -75,6 +100,7 @@ export function createHash(pattern: string, text: string): { [key: string]: Hash
  * @param {boolean} [space=false] - true = space is count. false = space is not count as character. Default is false
  * @returns {string|Array} text with options applied
  *
+ * @category Utilities
  * @example <caption>Object compares</caption>
  * applyOptions("Race car") // 'racecar'
  * applyOptions(["Car", "Race car"]) // [ 'car', 'racecar' ]

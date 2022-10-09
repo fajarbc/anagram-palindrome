@@ -49,11 +49,11 @@ console.log(findPattern("car", "race car care")) // [ 'rac', 'car', 'arc', 'rca'
 ```
 
 ### In Browser
-If you are using this directly in your browser, you could use `type="module"` in your `script` tag. Here, I'm using **unpkg.com** as cdn source to call package `anagram-palindrome` version `0.3.1`.
+If you are using this directly in your browser, you could use `type="module"` in your `script` tag. Here, I'm using **unpkg.com** as cdn source to call package `anagram-palindrome` version `0.3.2` and stright to file `dist/index.mjs`.
 
 ```html
 <script type="module">
-  import { findPattern } from 'https://unpkg.com/anagram-palindrome@0.3.1';
+  import { findPattern } from 'https://unpkg.com/anagram-palindrome@0.3.2/dist/index.mjs';
 
   console.log(findPattern("car", "race car care")) // [ 'rac', 'car', 'arc', 'rca', 'car' ]
 </script>
@@ -61,20 +61,20 @@ If you are using this directly in your browser, you could use `type="module"` in
 or import all function
 ```html
 <script type="module">
-  import * as ap from 'https://unpkg.com/anagram-palindrome@0.3.1';
+  import * as ap from 'https://unpkg.com/anagram-palindrome@0.3.2/dist/index.mjs';
 
   console.log(ap.findPattern("car", "race car care")) // [ 'rac', 'car', 'arc', 'rca', 'car' ]
 </script>
 ```
 You can change cdn from **unpkg.com** to **jsdelivr.net** by replacing 
-`https://unpkg.com/anagram-palindrome@0.3.1`
+`https://unpkg.com/anagram-palindrome@0.3.2/dist/index.mjs`
 
 with
 
-`https://cdn.jsdelivr.net/npm/anagram-palindrome@0.3.1/src/index.js`
+`https://cdn.jsdelivr.net/npm/anagram-palindrome@0.3.2/dist/index.mjs`
 
 ## Function
-Read complete [API documentation here](https://fajarbc.github.io/anagram-palindrome/api-docs/index.html)
+Read complete [API documentation here](https://fajarbc.github.io/anagram-palindrome/docs/index.html)
 
 ### findPattern
 ```findPattern(pattern, text, options)```
